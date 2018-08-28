@@ -1,0 +1,36 @@
+body {
+    margin: 0px 30px 30px 30px;
+}
+
+h1 {
+    height: 30px;
+    margin-left: 235px;
+    color: rgb(79, 153, 118);
+}
+
+h2 {
+    margin-left: 235px;
+}
+
+.row {
+    display: flex; 
+ }
+
+.cell {
+     height: 26px;
+     width: 26px;
+}
+    
+#player {
+    position: absolute;
+    background-color: #BADACB;
+    height: 22px;
+    width: 22px;
+    border: 2px solid rgb(79, 153, 118);
+    margin-left: 30px;
+    margin-top: 73px;
+ }
+
+ .wall {
+     background-color: #213965;
+ }
