@@ -26,32 +26,33 @@ let playerCell = 0;
 
 let player = document.getElementById("player");
 
-for (i = 0; i < map.length; i++) {
-    let row = document.createElement("div");
-    row.classList.add("row");
-    row.id = "row-" + i;
-    document.getElementById("maze").appendChild(row);
 
-    let gameMap = map[i];
+for (row = 0; row < map.length; row++) {
+    let rowDiv = document.createElement("div");
+    rowDiv.classList.add("row");
+    rowDiv.id = "row-" + row;
+    document.getElementById("maze").appendChild(rowDiv);
 
-    for (j = 0; j < gameMap.length; j++) {
-        let cell = document.createElement("div");
-        cell.classList.add("cell");
-        cell.id = "cell-" + j;
-        row.appendChild(cell);
+    let gameMap = map[row];
 
-        let character = gameMap[j];
+    for (cell = 0; cell < gameMap.length; cell++) {
+        let cellDiv = document.createElement("div");
+        cellDiv.classList.add("cell");
+        cellDiv.id = "cell-" + cell;
+        rowDiv.appendChild(cellDiv);
+
+        let character = gameMap[cell];
 
         // starting position
         if (character == "S") {
-            player.style.left = (cellSize * j) + "px";
-            player.style.top = (cellSize * i) + "px";
-            playerRow = i;
-            playerCell = j; 
+            player.style.left = (cellSize * cell) + "px";
+            player.style.top = (cellSize * row) + "px";
+            playerRow = row;
+            playerCell = cell; 
         }
         // wall color
         else if (character == wallBlock) {
-            cell.classList.add("wall");
+            cellDiv.classList.add("wall");
         }
     }
 }
